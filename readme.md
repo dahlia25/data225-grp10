@@ -33,7 +33,7 @@ Since the COVID-19 pandemic, there has been an insurmountable increase in intern
 | nytimes_api_py_files | etl_python_run_procedure.png | a screenshot showing how to execute the python files in command line |
 | twitter_api_py_files | twitterStream.py | Python file that connects to Twitter using API (not used in project) |
 | gcp_raw_data_tables | raw_tables_all_Create.sql | SQL file that contains DDL statements to insert raw data into GCP |
-| gcp_raw_data_tables |  |  |
-| gcp_final_normalied_data_tables |  |  |
-| gcp_final_normalied_data_tables |  |  |
-| gcp_final_normalied_data_tables |  |  |
+| gcp_raw_data_tables | raw_tables_insert.pdf | a PDF that shows the steps to import data into GCP |
+| gcp_final_normalized_data_tables | norm_allTables_Create.sql |  |
+| gcp_final_normalized_data_tables |  |  |
+| gcp_final_normalized_data_tables |  |  |

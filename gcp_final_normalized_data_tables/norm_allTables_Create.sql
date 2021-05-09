@@ -5,28 +5,28 @@ CREATE TABLE `date_ymd` (
   `month` int(11) DEFAULT NULL,
   `day` int(11) DEFAULT NULL,
   PRIMARY KEY (`date_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=781 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table2
 CREATE TABLE `state_details` (
   `state_id` int(11) NOT NULL AUTO_INCREMENT,
   `state_name` varchar(100) NOT NULL,
   PRIMARY KEY (`state_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table3
 CREATE TABLE `county_details` (
   `county_id` int(11) NOT NULL AUTO_INCREMENT,
   `county_name` varchar(100) NOT NULL,
   PRIMARY KEY (`county_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1931 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table4
 CREATE TABLE `city_details` (
   `city_id` int(11) NOT NULL AUTO_INCREMENT,
   `city_name` varchar(45) NOT NULL,
   PRIMARY KEY (`city_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1170 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table5
 CREATE TABLE `norm_ny_abstract_withIDs` (
@@ -40,7 +40,7 @@ CREATE TABLE `norm_ny_abstract_withIDs` (
   PRIMARY KEY (`abstract_id`),
   KEY `date_id` (`date_id`),
   CONSTRAINT `norm_ny_abstract_withIDs_ibfk_1` FOREIGN KEY (`date_id`) REFERENCES `date_ymd` (`date_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109253 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table6
 CREATE TABLE `norm_twitter_1000_bigrams` (
@@ -49,7 +49,7 @@ CREATE TABLE `norm_twitter_1000_bigrams` (
   `date_id` int(11) NOT NULL,
   PRIMARY KEY (`date_id`,`term`),
   CONSTRAINT `norm_twitter_1000_bigrams_ibfk_1` FOREIGN KEY (`date_id`) REFERENCES `date_ymd` (`date_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table7
 CREATE TABLE `norm_twitter_1000_terms` (
@@ -58,7 +58,7 @@ CREATE TABLE `norm_twitter_1000_terms` (
   `date_id` int(11) NOT NULL,
   PRIMARY KEY (`date_id`,`term`),
   CONSTRAINT `norm_twitter_1000_terms_ibfk_1` FOREIGN KEY (`date_id`) REFERENCES `date_ymd` (`date_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table8
 CREATE TABLE `norm_ny_US_county_level` (
@@ -74,7 +74,7 @@ CREATE TABLE `norm_ny_US_county_level` (
   CONSTRAINT `norm_ny_US_county_level_ibfk_1` FOREIGN KEY (`date_id`) REFERENCES `date_ymd` (`date_id`),
   CONSTRAINT `norm_ny_US_county_level_ibfk_2` FOREIGN KEY (`county_id`) REFERENCES `county_details` (`county_id`),
   CONSTRAINT `norm_ny_US_county_level_ibfk_3` FOREIGN KEY (`state_id`) REFERENCES `state_details` (`state_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table9
 CREATE TABLE `norm_ny_US_colleges_univ` (
@@ -93,7 +93,7 @@ CREATE TABLE `norm_ny_US_colleges_univ` (
   CONSTRAINT `norm_ny_US_colleges_univ_ibfk_1` FOREIGN KEY (`city_id`) REFERENCES `city_details` (`city_id`),
   CONSTRAINT `norm_ny_US_colleges_univ_ibfk_2` FOREIGN KEY (`county_id`) REFERENCES `county_details` (`county_id`),
   CONSTRAINT `norm_ny_US_colleges_univ_ibfk_3` FOREIGN KEY (`state_id`) REFERENCES `state_details` (`state_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table10
 CREATE TABLE `norm_ny_US_excessDeaths_byAllCauses` (
@@ -112,7 +112,7 @@ CREATE TABLE `norm_ny_US_excessDeaths_byAllCauses` (
   KEY `end_date_id` (`end_date_id`),
   CONSTRAINT `norm_ny_US_excessDeaths_byAllCauses_ibfk_1` FOREIGN KEY (`start_date_id`) REFERENCES `date_ymd` (`date_id`),
   CONSTRAINT `norm_ny_US_excessDeaths_byAllCauses_ibfk_2` FOREIGN KEY (`end_date_id`) REFERENCES `date_ymd` (`date_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table11
 CREATE TABLE `norm_ny_US_mask_survey` (
@@ -123,7 +123,7 @@ CREATE TABLE `norm_ny_US_mask_survey` (
   `FREQUENTLY` decimal(5,5) DEFAULT NULL,
   `ALWAYS` decimal(5,5) DEFAULT NULL,
   PRIMARY KEY (`COUNTYFP`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 #Table12
 CREATE TABLE `county_fips_mapping` (
