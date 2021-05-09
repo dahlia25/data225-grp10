@@ -37,3 +37,10 @@ Since the COVID-19 pandemic, there has been an insurmountable increase in intern
 | gcp_final_normalized_data_tables | norm_allTables_Create.sql | SQL file that contains DDL statements for normalized data |
 | gcp_final_normalized_data_tables | norm_allTables_Insert.sql | SQL file that contains DML statements to insert normalized data |
 | gcp_final_normalized_data_tables | allTableDetails.pdf | a PDF that shows the steps to import normalized data into GCP |
+| data | nytimes_covid_stats_data_csv | this directory contains COVID-19 statistics & mask survey data |
+| data | nytimes_raw_data_json | this directory contains the raw JSON data by month from NY Times API |
+| data | nytimes_transformed_data_csv | this directory contains the CSV transformed NY Times API data from JSON |
+| data | twitter_data_csv | this directory contains Twitter key terms and bigrams in CSV format |
+
+Some Tableau dashboards built using this created database can be found here:<br>
+https://public.tableau.com/profile/neha.singh4505#!/vizhome/Group10_CovidAnalysis/Story1
